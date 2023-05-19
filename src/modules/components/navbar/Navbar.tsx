@@ -24,7 +24,7 @@ function Navbar() {
     };
     return (
         <div className={styles.navbar}>
-                <PetsIcon />
+                <PetsIcon className={styles.paw}/>
                 <Typography sx={{ minWidth: 100 }} className={styles.title}>
                     PAWESOME NEWS
                 </Typography>

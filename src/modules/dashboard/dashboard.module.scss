@@ -1,0 +1,13 @@
+@use "sass:map";
+@import "./src/scss/variables/colors";
+@import "./src/scss/variables/typography";
+.cardWrapper {
+  display: grid;
+  @media only screen and (max-width: 472px) and (min-width: 320px) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  @media (min-width: 472px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  gap: 40px;
+}
