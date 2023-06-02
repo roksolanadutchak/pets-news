@@ -5,7 +5,7 @@ import {
     RouterProvider,
 } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
-import Dashboard from "./modules/dashboard/Dashboard";
+import Dashboard from "./modules/Dashboard/Dashboard";
 
 const router = createBrowserRouter([
     {

@@ -1,6 +1,6 @@
 @use "sass:map";
-@import "./src/scss/variables/colors";
-@import "./src/scss/variables/typography";
+@import "./src/shared/scss/variables/colors.scss";
+@import "../../../shared/scss/variables/typography";
 
 .navbar {
   background-color: map.get($primary, P900);

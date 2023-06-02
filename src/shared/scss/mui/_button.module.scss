@@ -1,6 +1,6 @@
 @use "sass:map";
-@import "./src/scss/variables/colors";
-@import "./src/scss/variables/typography";
+@import "./src/shared/scss/variables/colors.scss";
+@import "./src/shared/scss/variables/typography";
 @mixin button {
   background-color: map.get($primary, P600);
   color: map.get($neutral, P800);
