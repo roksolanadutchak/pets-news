@@ -9,10 +9,13 @@ const ModalComponent: FC<{ open: boolean; handleClose: () => void }> = ({
 	handleClose,
 }) => {
 	console.log(open);
+
 	const { loading, data } = useCardApi(1);
+
 	if (loading) return console.log('loading');
+
 	const style = {
-		position: 'absolute' as 'absolute',
+		position: 'absolute',
 		top: '50%',
 		left: '50%',
 		transform: 'translate(-50%, -50%)',

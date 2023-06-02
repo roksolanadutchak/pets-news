@@ -1,0 +1,13 @@
+@use 'sass:map';
+@import './src/shared/scss/variables/colors.scss';
+@import './src/shared/scss/variables/typography';
+
+// TODO: rewrive with global classnames
+@mixin button {
+	background-color: map.get($primary, P600);
+	color: map.get($neutral, P800);
+	font-size: map.get($font-sizes, 2);
+}
+@mixin hover {
+	background-color: map.get($primary, P100);
+}

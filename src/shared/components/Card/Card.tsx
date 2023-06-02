@@ -3,7 +3,7 @@ import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import { CardActions } from '@mui/material';
 import Chip from '@mui/material/Chip';
-import styles from './card.module.scss';
+import styles from './Card.module.scss';
 import ModalComponent from '../Modal/Modal';
 import Button from '@mui/material/Button';
 import { useState } from 'react';

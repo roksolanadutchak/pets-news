@@ -1,5 +1,5 @@
 @use 'sass:map';
-@import '../../scss/variables/colors.scss';
+@import '../../scss/variables/colors';
 @import '../../scss/variables/typography';
 
 .navbar {
@@ -10,9 +10,11 @@
 	justify-content: space-around;
 	align-items: center;
 	margin-bottom: 50px;
+
 	.paw {
 		margin: 0 15px 0 15px;
 	}
+
 	.title {
 		flex-grow: 1;
 		font-size: map.get($font-sizes, 5);

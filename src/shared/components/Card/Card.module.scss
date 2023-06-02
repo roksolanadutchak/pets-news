@@ -1,9 +1,8 @@
 @use 'sass:map';
-@use '../../scss/mui/_button.module';
-@use '../../scss/mui/_chip.module';
 @import '../../scss/variables/colors';
 @import '../../scss/variables/typography';
 
+// TODO: move elipsis and shadow mixins to sepparate file '/shared/scss/variables/mixins'
 @mixin text-ellipsis {
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
@@ -27,14 +26,9 @@
 	display: flex;
 	flex-direction: column;
 	.chip {
-		@include chip.chip;
 		margin: 5px;
 	}
 	.button {
-		@include button.button;
 		margin-top: 15px;
-	}
-	.button:hover {
-		@include button.hover;
 	}
 }
