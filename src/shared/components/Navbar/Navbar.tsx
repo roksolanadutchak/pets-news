@@ -23,7 +23,6 @@ const Navbar = () => {
 		setAnchorEl(null);
 	};
 
-	// TODO: move this to /shared/scss/mui/paper.scss and write with global selectors for paper except of avatar styles
 	const paperProps = {
 		elevation: 0,
 		sx: {

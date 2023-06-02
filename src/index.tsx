@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import Dashboard from './modules/Dashboard/Dashboard';
 import './shared/scss/index.scss';
+import './config/axiosConfig';
 
 const router = createBrowserRouter([
 	{
