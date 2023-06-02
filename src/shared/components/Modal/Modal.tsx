@@ -12,7 +12,11 @@ const ModalComponent: FC<{ open: boolean; handleClose: () => void }> = ({
 
 	const { loading, data } = useCardApi(1);
 
-	if (loading) return console.log('loading');
+	if (loading) {
+		return;
+	}
+
+	console.log('loading');
 
 	const style = {
 		position: 'absolute',
