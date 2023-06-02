@@ -1,8 +1,8 @@
 @use "sass:map";
-@use "./src/scss/shared/_button.module";
-@use "./src/scss/shared/_chip.module";
-@import "./src/scss/variables/colors";
-@import "./src/scss/variables/typography";
+@use "../../../shared/scss/mui/_button.module";
+@use "../../../shared/scss/mui/_chip.module";
+@import "../../../shared/scss/variables/colors";
+@import "../../../shared/scss/variables/typography";
 
 @mixin text-ellipsis {
   display: -webkit-box;

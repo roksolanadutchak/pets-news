@@ -1,6 +1,6 @@
 @use "sass:map";
-@import "./src/scss/variables/colors";
-@import "./src/scss/variables/typography";
+@import "./src/shared/scss/variables/colors";
+@import "./src/shared/scss/variables/typography";
 @mixin chip {
   background-color: map.get($primary, P700);
   color: map.get($neutral, P700);

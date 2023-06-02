@@ -1,10 +1,10 @@
-import Navbar from "../components/navbar/Navbar";
-import useApi from "../../hooks/useApi";
-import CardComponent from "../components/card/Card";
+import Navbar from "../components/Navbar/Navbar";
+import useDashboardApi from "../../hooks/useDashboardApi";
+import CardComponent from "../components/Card/Card";
 import styles from "./dashboard.module.scss"
 
 function Dashboard() {
-    const {loading, data } = useApi("http://localhost:8000/cards");
+    const {loading, data } = useDashboardApi();
     if(loading) return <h1>Loading</h1>
    return(
        <div>
