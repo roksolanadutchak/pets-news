@@ -3,7 +3,11 @@
 @import './src/shared/scss/variables/typography';
 
 // TODO: rewrive with global classnames
-@mixin chip {
+.MuiChip-root.MuiChip-filled {
 	background-color: map.get($primary, P700);
-	color: map.get($neutral, P700);
+	margin-right: 15px;
+	margin-bottom: 15px;
+	& .MuiChip-label {
+		color: map.get($neutral, P700);
+	}
 }

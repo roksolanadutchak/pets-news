@@ -3,8 +3,8 @@ import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import { CardActions } from '@mui/material';
 import Chip from '@mui/material/Chip';
-import styles from './Card.module.scss';
-import ModalComponent from '../Modal/Modal';
+import './Card.module.scss';
+import ModalComponent from '../Modal/ModalComponent';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 import { CardData } from '../../interfaces/card-data';
@@ -16,20 +16,18 @@ const CardComponent = (cardData: CardData) => {
 	};
 
 	return (
-		<Card className={styles.cardWrapper}>
+		<Card>
 			<CardHeader title={cardData.author} subheader={cardData.creationDate} />
-			<CardContent className={styles.cardContent}>
+			<CardContent>
 				<p>{cardData.content}</p>
 			</CardContent>
-			<CardActions className={styles.cardFooter}>
+			<CardActions>
 				<div>
 					{cardData.chips.map((chip) => (
-						<Chip key={chip.id} label={chip.tag} className={styles.chip} />
+						<Chip key={chip.id} label={chip.tag} />
 					))}
 				</div>
-				<Button className={styles.button} onClick={handleOpenClose}>
-					Read more
-				</Button>
+				<Button onClick={handleOpenClose}>Read more</Button>
 				<ModalComponent open={open} handleClose={handleOpenClose} />
 			</CardActions>
 		</Card>

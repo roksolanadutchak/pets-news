@@ -1,22 +1,19 @@
 @use 'sass:map';
 @import '../../scss/variables/colors';
 @import '../../scss/variables/typography';
-
+@import '../../scss/variables/mixins';
 // TODO: move elipsis and shadow mixins to sepparate file '/shared/scss/variables/mixins'
-@mixin text-ellipsis {
-	display: -webkit-box;
-	-webkit-line-clamp: 3;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
-}
-@mixin box-shadow($color, $number) {
-	box-shadow: 0 20px 25px -5px map.get($color, $number),
-		0 8px 10px -6px map.get($color, $number);
-}
-.cardWrapper {
+.MuiPaper-root {
 	border: 1px solid map.get($neutral, P800);
 	@include box-shadow($neutral, P800);
+	& .MuiCardHeader-root {
+		background-color: map.get($primary, P500);
+		& .MuiTypography-root.MuiTypography-h5.MuiCardHeader-title {
+			color: map.get($primary, P200);
+		}
+	}
 }
+
 .cardContent {
 	@include text-ellipsis;
 }
@@ -25,10 +22,4 @@
 	border-top: 1px solid map.get($neutral, P900);
 	display: flex;
 	flex-direction: column;
-	.chip {
-		margin: 5px;
-	}
-	.button {
-		margin-top: 15px;
-	}
 }

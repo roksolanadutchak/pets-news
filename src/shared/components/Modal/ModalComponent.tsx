@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { FC } from 'react';
 import useCardApi from '../../hooks/useCardApi';
-
+import './Modal.module.scss';
 const ModalComponent: FC<{ open: boolean; handleClose: () => void }> = ({
 	open,
 	handleClose,
@@ -16,11 +16,9 @@ const ModalComponent: FC<{ open: boolean; handleClose: () => void }> = ({
 		return;
 	}
 
-	console.log('loading');
-
 	const style = {
-		position: 'absolute',
-		top: '50%',
+		position: 'absolute' as 'absolute',
+		top: '90%',
 		left: '50%',
 		transform: 'translate(-50%, -50%)',
 		width: 400,
@@ -28,6 +26,7 @@ const ModalComponent: FC<{ open: boolean; handleClose: () => void }> = ({
 		border: '2px solid #000',
 		boxShadow: 24,
 		p: 4,
+		overflow: 'scroll',
 	};
 
 	return (
