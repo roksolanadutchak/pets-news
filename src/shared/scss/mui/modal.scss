@@ -1,0 +1,19 @@
+@use 'sass:map';
+@import './src/shared/scss/variables/colors';
+
+.MuiModal-root {
+	overflow: auto;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding-top: 50px;
+	& .MuiBox-root {
+		overflow: auto;
+		display: flex;
+		flex-direction: column;
+		width: 400px;
+		height: 800px;
+		background-color: map.get($neutral, P800);
+		padding: 20px;
+	}
+}
