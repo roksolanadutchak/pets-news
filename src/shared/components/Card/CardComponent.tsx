@@ -3,7 +3,7 @@ import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import { CardActions } from '@mui/material';
 import Chip from '@mui/material/Chip';
-import ModalComponent from '../Modal/ModalComponent';
+import Article from '../../../modules/Dashboard/components/article/Article';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 import { CardData } from '../../interfaces/card-data';
@@ -27,7 +27,7 @@ const CardComponent = (cardData: CardData) => {
 					))}
 				</div>
 				<Button onClick={handleOpenClose}>Read more</Button>
-				<ModalComponent open={open} handleClose={handleOpenClose} />
+				<Article open={open} handleClose={handleOpenClose} />
 			</CardActions>
 		</Card>
 	);

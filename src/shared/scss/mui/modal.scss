@@ -8,12 +8,13 @@
 	align-items: flex-start;
 	padding-top: 50px;
 	& .MuiBox-root {
-		overflow: auto;
 		display: flex;
 		flex-direction: column;
-		width: 400px;
-		height: 800px;
+		width: 33%;
 		background-color: map.get($neutral, P800);
 		padding: 20px;
+		border: 1px solid map.get($neutral, P900);
+		background-clip: padding-box;
+		border-radius: 12px;
 	}
 }

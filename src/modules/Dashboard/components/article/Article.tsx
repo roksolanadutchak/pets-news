@@ -1,36 +1,39 @@
-import { FC, useEffect, useState, useRef } from 'react';
+import { FC, useState, useRef } from 'react';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import CloseIcon from '@mui/icons-material/Close';
-import useCardApi from '../../hooks/useCardApi';
+import useCardApi from '../../../../shared/hooks/useCardApi';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
-const ModalComponent: FC<{ open: boolean; handleClose: () => void }> = ({
+import styles from './article.module.scss';
+const Article: FC<{ open: boolean; handleClose: () => void }> = ({
 	open,
 	handleClose,
 }) => {
 	const [isVisible, setIsVisible] = useState(true);
 	const { loading, data } = useCardApi(1);
 	const titleRef = useRef(null);
+
 	const listenToScroll = () => {
-		const heightToHideFrom = 1000;
-		const winScroll =
-			document.body.scrollTop || document.documentElement.scrollTop;
+		const heightToHideFrom = titleRef.current
+			? titleRef.current.getBoundingClientRect().height
+			: 35;
+		const winScroll = titleRef.current
+			? titleRef.current.getBoundingClientRect().y
+			: 15;
 		if (winScroll > heightToHideFrom) {
 			isVisible && setIsVisible(false);
 		} else {
 			setIsVisible(true);
 		}
+		console.log(`height to hide ${heightToHideFrom}`);
+		console.log(`winScroll ${winScroll}`);
 	};
-
-	useEffect(() => {
-		window.addEventListener('scroll', listenToScroll);
-		return () => window.removeEventListener('scroll', listenToScroll);
-	}, []);
+	console.log();
 
 	if (loading) {
-		return;
+		return null;
 	}
 	return (
 		<>
@@ -39,9 +42,10 @@ const ModalComponent: FC<{ open: boolean; handleClose: () => void }> = ({
 				onClose={handleClose}
 				aria-labelledby="modal-modal-title"
 				aria-describedby="modal-modal-description"
+				onScroll={listenToScroll}
 			>
 				<Box>
-					<div>
+					<div className={styles.header}>
 						<Typography
 							id="modal-modal-title"
 							variant="h6"
@@ -63,6 +67,7 @@ const ModalComponent: FC<{ open: boolean; handleClose: () => void }> = ({
 							onClick={() => {
 								titleRef.current.scrollIntoView();
 							}}
+							className={styles.scrollButton}
 						>
 							Scroll to top
 						</Button>
@@ -72,4 +77,4 @@ const ModalComponent: FC<{ open: boolean; handleClose: () => void }> = ({
 		</>
 	);
 };
-export default ModalComponent;
+export default Article;
