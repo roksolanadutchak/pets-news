@@ -1,0 +1,26 @@
+@use 'sass:map';
+@import '../../scss/variables/colors';
+@import '../../scss/variables/typography';
+@import '../../scss/variables/mixins';
+// TODO: move elipsis and shadow mixins to sepparate file '/shared/scss/variables/mixins'
+.MuiPaper-root {
+	border: 1px solid map.get($neutral, P800);
+	@include box-shadow($neutral, P800);
+	& .MuiCardHeader-root {
+		& .MuiTypography-root.MuiTypography-h5.MuiCardHeader-title {
+			color: map.get($primary, P500);
+		}
+	}
+	& .MuiCardContent-root {
+		flex: 1;
+		@include text-ellipsis;
+		padding: 0;
+		margin: 16px;
+	}
+	& .MuiCardActions-root {
+		margin-top: 10px;
+		border-top: 1px solid map.get($neutral, P900);
+		display: flex;
+		flex-direction: column;
+	}
+}

@@ -1,0 +1,12 @@
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.scrollButton {
+	bottom: 50%;
+	right: 0;
+	position: sticky !important;
+	width: 40px;
+	opacity: 0.8;
+}

@@ -1,0 +1,16 @@
+@use 'sass:map';
+@import './colors';
+@import './typography';
+@mixin text-ellipsis {
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+@mixin box-shadow($color, $number) {
+	box-shadow: 0 20px 25px -5px map.get($color, $number),
+		0 8px 10px -6px map.get($color, $number);
+}
+@mixin hover {
+	background-color: map.get($primary, P100);
+}
