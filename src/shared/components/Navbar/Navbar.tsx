@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { NavLink } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -102,10 +103,12 @@ const Navbar = () => {
 					Settings
 				</MenuItem>
 				<MenuItem onClick={handleClose}>
-					<ListItemIcon>
-						<Logout fontSize="small" />
-					</ListItemIcon>
-					Logout
+					<NavLink to="login">
+						<ListItemIcon>
+							<Logout fontSize="small" />
+						</ListItemIcon>
+						Logout
+					</NavLink>
 				</MenuItem>
 			</Menu>
 		</div>
