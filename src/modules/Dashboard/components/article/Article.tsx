@@ -7,6 +7,7 @@ import useCardApi from '../../../../shared/hooks/useCardApi';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import styles from './article.module.scss';
+
 const Article: FC<{ open: boolean; handleClose: () => void }> = ({
 	open,
 	handleClose,

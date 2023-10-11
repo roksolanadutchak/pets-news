@@ -1,0 +1,34 @@
+@use 'sass:map';
+@import '../../shared/scss/variables/colors';
+@import '../../shared/scss/variables/typography';
+body {
+	height: 100%;
+	margin: 0;
+	background: linear-gradient(#af5a87, #bca5ae) no-repeat fixed;
+}
+.formWrapper {
+	background: white;
+	margin: auto;
+	width: 50%;
+	padding: 20px;
+}
+h1 {
+	color: map.get($primary, P500);
+	font-size: map.get($font-sizes, 6);
+}
+.formContainer {
+	display: flex;
+	flex-direction: column;
+}
+label {
+	color: map.get($primary, P300);
+	padding: 15px 0 15px 0;
+	font-size: map.get($font-sizes, 5);
+}
+button {
+	margin-top: 15px;
+	padding: 15px;
+	font-size: map.get($font-sizes, 4);
+	background-color: map.get($primary, P200);
+	color: map.get($neutral, P700);
+}
