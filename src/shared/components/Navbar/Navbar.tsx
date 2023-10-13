@@ -1,4 +1,4 @@
-import { useTranslation} from "react-i18next";
+import { useTranslation } from 'react-i18next';
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
@@ -17,7 +17,7 @@ import PetsIcon from '@mui/icons-material/Pets';
 import LanguageIcon from '@mui/icons-material/Language';
 
 const Navbar = () => {
-	const { t, i18n } = useTranslation();
+	const { t } = useTranslation();
 	const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 	const open = Boolean(anchorEl);
 
