@@ -6,6 +6,7 @@ import Dashboard from './modules/Dashboard/Dashboard';
 import Login from './modules/Login/Login';
 import './shared/scss/index.scss';
 import './config/axiosConfig';
+import './config/i18n';
 
 const router = createBrowserRouter([
 	{
