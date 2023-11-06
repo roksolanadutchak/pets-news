@@ -91,20 +91,20 @@ const Navbar = () => {
 					<Avatar /> {t('Profile')}
 				</MenuItem>
 				<MenuItem onClick={handleClose}>
-					<Avatar /> My account
+					<Avatar /> {t('My account')}
 				</MenuItem>
 				<Divider />
 				<MenuItem onClick={handleClose}>
 					<ListItemIcon>
 						<PersonAdd fontSize="small" />
 					</ListItemIcon>
-					Add another account
+					{t('Add another account')}
 				</MenuItem>
 				<MenuItem onClick={handleClose}>
 					<ListItemIcon>
 						<Settings fontSize="small" />
 					</ListItemIcon>
-					Settings
+					{t('Settings')}
 				</MenuItem>
 				<MenuItem onClick={handleClose}>
 					<NavLink to="login">
