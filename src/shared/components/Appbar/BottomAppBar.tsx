@@ -1,17 +1,17 @@
 import * as React from 'react';
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import AppBar from '@mui/material/AppBar';
 
 export default function BottomAppBar() {
 	const [count, setCounter] = React.useState<number>(0);
-	const { t, i18n } = useTranslation();
-    const lngs = {
-        en: { nativeName: 'English' },
-        es: { nativeName: 'Spanish' },
-        fr: { nativeName: 'French' },
-        ua: { nativeName: 'Ukrainian' },
-    };
-    return (
+	const { i18n } = useTranslation();
+	const lngs = {
+		en: { nativeName: 'English' },
+		es: { nativeName: 'Spanish' },
+		fr: { nativeName: 'French' },
+		ua: { nativeName: 'Ukrainian' },
+	};
+	return (
 		<React.Fragment>
 			<AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
 				<div>
