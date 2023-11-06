@@ -1,3 +1,4 @@
+import { useTranslation} from "react-i18next";
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
@@ -13,10 +14,13 @@ import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import PetsIcon from '@mui/icons-material/Pets';
+import LanguageIcon from '@mui/icons-material/Language';
 
 const Navbar = () => {
+	const { t, i18n } = useTranslation();
 	const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 	const open = Boolean(anchorEl);
+
 	const handleClick = (event: React.MouseEvent<HTMLElement>) => {
 		setAnchorEl(event.currentTarget);
 	};
@@ -84,7 +88,7 @@ const Navbar = () => {
 				anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
 			>
 				<MenuItem onClick={handleClose}>
-					<Avatar /> Profile
+					<Avatar /> {t('Profile')}
 				</MenuItem>
 				<MenuItem onClick={handleClose}>
 					<Avatar /> My account
@@ -111,6 +115,18 @@ const Navbar = () => {
 					</NavLink>
 				</MenuItem>
 			</Menu>
+			<Tooltip title="Account settings">
+				<IconButton
+					onClick={handleClick}
+					size="small"
+					sx={{ ml: 2 }}
+					aria-controls={open ? 'account-menu' : undefined}
+					aria-haspopup="true"
+					aria-expanded={open ? 'true' : undefined}
+				>
+					<LanguageIcon sx={{ width: 32, height: 32 }}>M</LanguageIcon>
+				</IconButton>
+			</Tooltip>
 		</div>
 	);
 };
