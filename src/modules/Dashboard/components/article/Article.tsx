@@ -6,7 +6,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import useCardApi from '../../../../shared/hooks/useCardApi';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
-import styles from './article.module.scss';
+import styles from './Article.module.scss';
+import Comment from '../comment/Comment';
 
 const Article: FC<{ open: boolean; handleClose: () => void }> = ({
 	open,
@@ -73,6 +74,7 @@ const Article: FC<{ open: boolean; handleClose: () => void }> = ({
 							Scroll to top
 						</Button>
 					)}
+					<Comment />
 				</Box>
 			</Modal>
 		</>
