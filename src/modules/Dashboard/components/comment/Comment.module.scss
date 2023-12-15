@@ -1,6 +1,6 @@
-.MuiModal-root.MuiBox-root {
-	width: 100%;
-}
+@use 'sass:map';
+@import '../../../../shared/scss/variables/colors';
+@import '../../../../shared/scss/variables/mixins';
 .imageList {
 	display: grid;
 	grid-template-columns: 200px 200px 200px;
@@ -12,4 +12,9 @@
 	max-height: 100%;
 	margin: auto;
 	border-radius: 2px;
+}
+.dropzoneContainer {
+	border: 1px solid map.get($primary, P200);
+	border-radius: 12px;
+	@include box-shadow($neutral, P800);
 }
