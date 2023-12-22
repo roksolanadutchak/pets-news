@@ -33,7 +33,7 @@ const Comment = () => {
 		console.log(files[0]);
 		formData.append('file', files[0]);
 		axios
-			.post('/upload', formData)
+			.post('/comment/upload', formData)
 			.then((res) => console.log(res.data))
 			.catch((err) => console.log(err));
 	};
