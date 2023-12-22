@@ -1,8 +1,10 @@
 import { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import styles from './Comment.module.scss';
+import axios from 'axios';
 
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 const Comment = () => {
 	const [files, setFiles] = useState([]);
 	const onDrop = useCallback((acceptedFiles) => {
@@ -25,7 +27,16 @@ const Comment = () => {
 			reader.readAsArrayBuffer(file);
 		});
 	}, []);
-
+	const handleUpload = (event) => {
+		event.preventDefault();
+		const formData = new FormData();
+		console.log(files[0]);
+		formData.append('file', files[0]);
+		axios
+			.post('/comment/upload', formData)
+			.then((res) => console.log(res.data))
+			.catch((err) => console.log(err));
+	};
 	const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 	const fileList = files.map((file) => (
 		<li key={file.name}>
@@ -34,17 +45,20 @@ const Comment = () => {
 		</li>
 	));
 	return (
-		<Box className={styles.dropzoneContainer}>
-			<div {...getRootProps()}>
-				<input {...getInputProps()} />
-				{isDragActive ? (
-					<p>Drop the files here ...</p>
-				) : (
-					<p>Drag and drop some files here, or click to select files</p>
-				)}
-				<ul className={styles.imageList}>{fileList}</ul>
-			</div>
-		</Box>
+		<form onSubmit={handleUpload}>
+			<Box className={styles.dropzoneContainer}>
+				<div {...getRootProps()}>
+					<input {...getInputProps()} />
+					{isDragActive ? (
+						<p>Drop the files here ...</p>
+					) : (
+						<p>Drag and drop some files here, or click to select files</p>
+					)}
+					<ul className={styles.imageList}>{fileList}</ul>
+				</div>
+			</Box>
+			<Button type="submit">Submit</Button>
+		</form>
 	);
 };
 
