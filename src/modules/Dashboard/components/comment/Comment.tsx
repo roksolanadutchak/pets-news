@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import styles from './Comment.module.scss';
+import axios from 'axios';
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -31,7 +32,10 @@ const Comment = () => {
 		const formData = new FormData();
 		console.log(files[0]);
 		formData.append('file', files[0]);
-		console.log(formData);
+		axios
+			.post('/upload', formData)
+			.then((res) => console.log(res.data))
+			.catch((err) => console.log(err));
 	};
 	const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 	const fileList = files.map((file) => (
