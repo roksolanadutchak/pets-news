@@ -19,6 +19,8 @@ const Login = () => {
 		validationSchema,
 		onSubmit: (values) => {
 			alert(JSON.stringify(values, null, 2));
+			localStorage.setItem('email', values.email);
+			localStorage.setItem('password', values.password);
 		},
 	});
 	return (
